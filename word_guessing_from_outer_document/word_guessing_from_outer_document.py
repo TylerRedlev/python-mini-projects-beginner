@@ -24,3 +24,6 @@ TO WRITE:
 
 """
 
+#importing the random module
+import random
+
