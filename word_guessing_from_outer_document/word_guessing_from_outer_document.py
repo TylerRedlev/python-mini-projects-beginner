@@ -27,3 +27,10 @@ TO WRITE:
 #importing the random module
 import random
 
+#opening the document 'words_list.txt' and assigning it as variable f. We make python read the lines of the file f and assign it as the variable 'content'
+with open('words_list.txt') as f:
+    content = f.readlines()
+
+#remove whitespaces from characters characters like `\n` at the end of each line
+content = [lines.strip() for lines in content]
+
