@@ -31,6 +31,14 @@ import random
 with open('words_list.txt') as f:
     content = f.readlines()
 
+#CREATED A LIST FROM THE LINES OF OUR WORD FILE - THAT LIST IS CALLED "CONTENT"
 #remove whitespaces from characters characters like `\n` at the end of each line
 content = [lines.strip() for lines in content]
 
+
+#WE CHOSE A RANDOM ELEMENT OF THE LIST AND ASSIGNED THAT ELEMENT INTO THE VARIABLE "CHOSEN"
+chosen = random.choice(content)
+
+
+#WE CONVERTED THE CHOSEN STRING ELEMENT INTO A LIST
+chosenList = list(chosen)
