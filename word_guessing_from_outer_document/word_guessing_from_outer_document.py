@@ -50,3 +50,11 @@ activeStatus = list(("*" * len(chosen)))
 #WRITING OUT HOW MANY LETTERS THE WORD CONTAINS
 print("The word contains {} letters.".format(len(chosen)))
 
+#INPUT A CHARACTER
+
+def guess_input():
+
+    global guess
+    guess = input("Please enter one letter or a {}-letter word:".format(len(chosen)))
+    guess = guess.upper()
+    print(guess.upper())
