@@ -47,4 +47,6 @@ chosenList = list(chosen)
 
 activeStatus = list(("*" * len(chosen)))
 
+#WRITING OUT HOW MANY LETTERS THE WORD CONTAINS
 print("The word contains {} letters.".format(len(chosen)))
+
