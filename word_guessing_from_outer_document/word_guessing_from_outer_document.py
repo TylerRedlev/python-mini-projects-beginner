@@ -24,6 +24,10 @@ TO WRITE:
 
 """
 
+#---------------------------------------------------------------
+#      IMPORTING MODULES AND ASSIGNING FUNDAMENTAL VARIABLES
+#---------------------------------------------------------------
+
 #importing the random module
 import random
 
@@ -49,6 +53,12 @@ activeStatus = list(("*" * len(chosen)))
 
 #WRITING OUT HOW MANY LETTERS THE WORD CONTAINS
 print("The word contains {} letters.".format(len(chosen)))
+
+
+#-----------------------------------------
+#           WRITING THE FUNCTIONS
+#-----------------------------------------
+
 
 #INPUT A CHARACTER
 def guess_input():
@@ -78,3 +88,4 @@ def guess_iteration():
             activeStatus[i] = chosenList[i]
 
     print(''.join(activeStatus))
+
