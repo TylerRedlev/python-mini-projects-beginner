@@ -24,52 +24,53 @@ TO WRITE:
 
 """
 
-#---------------------------------------------------------------
+# ---------------------------------------------------------------
 #      IMPORTING MODULES AND ASSIGNING FUNDAMENTAL VARIABLES
-#---------------------------------------------------------------
+# ---------------------------------------------------------------
 
-#importing the random module
+# importing the random module
 import random
 
-#opening the document 'words_list.txt' and assigning it as variable f. We make python read the lines of the file f and assign it as the variable 'content'
+# opening the document 'words_list.txt' and assigning it as variable f. We make python read the lines of the file f and assign it as the variable 'content'
 with open('words_list.txt') as f:
     content = f.readlines()
 
-#CREATED A LIST FROM THE LINES OF OUR WORD FILE - THAT LIST IS CALLED "CONTENT"
-#remove whitespaces from characters characters like `\n` at the end of each line
+# CREATED A LIST FROM THE LINES OF OUR WORD FILE - THAT LIST IS CALLED "CONTENT"
+# remove whitespaces from characters characters like `\n` at the end of each line
 content = [lines.strip() for lines in content]
 
 
-#WE CHOSE A RANDOM ELEMENT OF THE LIST AND ASSIGNED THAT ELEMENT INTO THE VARIABLE "CHOSEN"
+# WE CHOSE A RANDOM ELEMENT OF THE LIST AND ASSIGNED THAT ELEMENT INTO THE VARIABLE "CHOSEN"
 chosen = random.choice(content)
 
 
-#WE CONVERTED THE CHOSEN STRING ELEMENT INTO A LIST
+# WE CONVERTED THE CHOSEN STRING ELEMENT INTO A LIST
 chosenList = list(chosen)
 
-#WE WRITE THE ACTIVE STATUS OF THE NAME TO BE GUESSED AS ************
+# WE WRITE THE ACTIVE STATUS OF THE NAME TO BE GUESSED AS ************
 
 activeStatus = list(("*" * len(chosen)))
 
-#WRITING OUT HOW MANY LETTERS THE WORD CONTAINS
+# WRITING OUT HOW MANY LETTERS THE WORD CONTAINS
 print("The word contains {} letters.".format(len(chosen)))
 
 
-#-----------------------------------------
+# -----------------------------------------
 #           WRITING THE FUNCTIONS
-#-----------------------------------------
+# -----------------------------------------
 
 
-#INPUT A CHARACTER
+# INPUT A CHARACTER
 def guess_input():
 
     global guess
-    guess = input("Please enter one letter or a {}-letter word:".format(len(chosen)))
+    guess = input(
+        "Please enter one letter or a {}-letter word:".format(len(chosen)))
     guess = guess.upper()
     print(guess.upper())
 
 
-#WRITING THE ITERATION FUNCTIONALITY OF THE SELECTED LIST ITEM FOR INPUTTED LETTER
+# WRITING THE ITERATION FUNCTIONALITY OF THE SELECTED LIST ITEM FOR INPUTTED LETTER
 def after_guess_func():
     letter_count = int(chosenList.count(guess))
     if letter_count > 1:
@@ -80,8 +81,7 @@ def after_guess_func():
         print("Sorry. There are no letters '{}' in this word.".format(guess))
 
 
-
-#UPDATING THE ACTIVE STATUS OF THE CHOSEN WORD AFTER A LETTER IS GUESSED
+# UPDATING THE ACTIVE STATUS OF THE CHOSEN WORD AFTER A LETTER IS GUESSED
 def guess_iteration():
     for i in range(len(chosenList)):
         if chosenList[i] == guess:
