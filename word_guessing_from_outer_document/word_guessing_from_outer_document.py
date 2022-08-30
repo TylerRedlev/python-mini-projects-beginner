@@ -68,3 +68,13 @@ def after_guess_func():
         print("Yes! The word contains the letter {}".format(guess))
     else:
         print("Sorry. There are no letters '{}' in this word.".format(guess))
+
+
+
+#UPDATING THE ACTIVE STATUS OF THE CHOSEN WORD AFTER A LETTER IS GUESSED
+def guess_iteration():
+    for i in range(len(chosenList)):
+        if chosenList[i] == guess:
+            activeStatus[i] = chosenList[i]
+
+    print(''.join(activeStatus))
