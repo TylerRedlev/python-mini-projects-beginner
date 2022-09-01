@@ -89,3 +89,34 @@ def guess_iteration():
 
     print(''.join(activeStatus))
 
+
+# -----------------------------------------
+#           THE MAIN LOOP OF THE PROGRAM
+# -----------------------------------------
+
+#THE MAIN LOOP OF THE PROGRAM
+counter = 0
+
+while True:
+
+    guess_input()
+
+    after_guess_func()
+
+    guess_iteration()
+
+    counter += 1
+
+    if '*' in activeStatus:
+        pass
+    else:
+        print("You don't have any letters left. Congratulations!")
+        final_guess = (''.join(activeStatus))
+        print("Yes! The word is {}. You guessed in {} times.".format(final_guess, counter))
+        break
+
+        """
+        --------------------------------------------
+                        THE END
+        --------------------------------------------
+        """
